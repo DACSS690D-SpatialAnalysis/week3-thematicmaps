@@ -8,9 +8,25 @@ output:
 ```{r}
 rm(list = ls())
 
-africaLink="https://github.com/DACSS-Spatial/data_forSpatial/raw/refs/heads/main/WORLD/africa_8857.gpkg"
+#store github file in africaLink
+africaLink="https://github.com/DACSS690D-SpatialAnalysis/week3-thematicmaps/raw/refs/heads/main/africa_8857_1.gpkg"
+
+#create temporary file path on computer
+#.gpkg extension for geopackage
+temp_file <- tempfile(fileext = ".gpkg")
+
+#download the file from the URL 
+#africaLink - source (where to get link from)
+#temp_file - destination (where to save it)
+#mode = "wb" - wb means write binary
+download.file(africaLink, temp_file, mode = "wb")   #wb very important
+
 library(sf)
-st_layers(africaLink)
+
+st_layers(temp_file)    #st_layers shows whats inside the gpkg file 
+#layer names, geometry types, number of features
+africa <- st_read(temp_file)  #loads spatial data into R
+
 ```
 ## Reading the layers:
 
