@@ -3,7 +3,7 @@ title: "THEMATICS - tabs"
 output:
   flexdashboard::flex_dashboard:
     navbar:
-      - { icon: "fa-github", href: "https://github.com/DACSS-Spatial/The-Thematics", align: right }
+      - { icon: "fa-github", href: "https://github.com/DACSS690D-SpatialAnalysis/week3-thematicmaps", align: right }
 
 ---
 
